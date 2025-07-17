@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simon Says Game</title>
+  <link rel="stylesheet" href="simonsay.css" />
+</head>
+
+<body>
+  <h1>🎵 Simon Says Game 🎵</h1>
+
+  <!-- Scoreboard -->
+  <div class="scoreboard">
+    <p>Level: <span id="level">0</span></p>
+    <p>High Score: <span id="highscore">0</span></p>
+  </div>
+
+  <!-- Start Button -->
+  <button id="start-btn">Start Game</button>
+
+  <!-- Buttons -->
+  <div class="btn-container">
+    <div class="btn red" id="red">1</div>
+    <div class="btn green" id="green">2</div>
+    <div class="btn yellow" id="yellow">3</div>
+    <div class="btn purple" id="purple">4</div>
+  </div>
+
+  <h2 id="status-msg">Click "Start Game" to begin</h2>
+  <button id="rules-btn" class="btn-rules">📜 Show Rules</button>
+
+<div id="rules-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 style="color: orchid;">Simon Says – Rules</h2>
+    <ul style="color: black;">
+      <li> Press "Start Game" to begin.</li>
+      <li> Watch the sequence of colors flashed by the game.</li>
+      <li> Click the buttons in the exact same order.</li>
+      <li> The sequence gets longer each level.</li>
+      <li> Game ends when you press the wrong color.</li>
+    </ul>
+  </div>
+</div>
+
+
+  <script src="simonsay.js"></script>
+</body>
+
+</html>
+
