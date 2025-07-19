@@ -10,6 +10,9 @@ const highscoreDisplay = document.querySelector("#highscore");
 const startBtn = document.querySelector("#start-btn");
 const statusMsg = document.querySelector("#status-msg");
 const body = document.querySelector("body");
+const clickSound = new Audio("sounds/click.mp3");
+const wrongSound = new Audio("sounds/wrong.mp3");
+
 
 startBtn.addEventListener("click", () => {
   if (!start) {
@@ -49,10 +52,13 @@ function levelup() {
 
 function btnpress() {
   if (!start) return;
+  
+
 
   let btn = this;
   let usercolor = btn.getAttribute("id");
-
+  clickSound.currentTime = 0;
+  clickSound.play();
   userflash(btn);
   userseq.push(usercolor);
 
@@ -70,18 +76,21 @@ function checkans(idx) {
 }
 
 function gameOver() {
+  wrongSound.play();
   if (level > highscore) {
     highscore = level;
-    highscoreDisplay.textContent = highscore;
+    highscoreDisplay.textContent = `High Score: ${highscore}`;
   }
 
-  statusMsg.innerHTML = `❌ Game Over at level ${level}.<br>Click "Start Game" to try again.`;
+  statusMsg.textContent = `❌ Game Over at level ${level}. Click "Start Game" to try again.`;
 
   body.classList.add("game-over");
   setTimeout(() => body.classList.remove("game-over"), 300);
 
   reset();
 }
+
+
 
 function reset() {
   start = false;

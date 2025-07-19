@@ -8,7 +8,9 @@
 </head>
 
 <body>
-  <h1>🎵 Simon Says Game 🎵</h1>
+  <p id="status-msg">Press "Start Game" to begin</p>
+
+  <h2>🎵Simon Says Game🎵</h2>
 
   <!-- Scoreboard -->
   <div class="scoreboard">
@@ -16,8 +18,7 @@
     <p>High Score: <span id="highscore">0</span></p>
   </div>
 
-  <!-- Start Button -->
-  <button id="start-btn">Start Game</button>
+
 
   <!-- Buttons -->
   <div class="btn-container">
@@ -25,7 +26,10 @@
     <div class="btn green" id="green">2</div>
     <div class="btn yellow" id="yellow">3</div>
     <div class="btn purple" id="purple">4</div>
-  </div>
+  </div><br><br>
+  
+  <!-- Start Button -->
+  <button id="start-btn">Start Game</button>
 
   <h2 id="status-msg">Click "Start Game" to begin</h2>
   <button id="rules-btn" class="btn-rules">📜 Show Rules</button>
@@ -37,7 +41,7 @@
     <ul style="color: black;">
       <li> Press "Start Game" to begin.</li>
       <li> Watch the sequence of colors flashed by the game.</li>
-      <li> Click the buttons in the exact same order.</li>
+      <li> Click the buttons in the exact same order.(<b>Remember the old blink</b> )</li>
       <li> The sequence gets longer each level.</li>
       <li> Game ends when you press the wrong color.</li>
     </ul>
